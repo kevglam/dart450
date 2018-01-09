@@ -1,0 +1,24 @@
+@keyframes imageani {
+  from {color: #6489CC;}
+  to {color: red;}
+
+}
+
+body {
+
+  font: 60px helvetica, sans-serif;
+  color: #6489CC;
+  animation-name: imageani;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  /*font-size: 60px; */
+}
+
+img {
+
+}
+
+div {
+  animation: imageanimation 5s infinite;
+
+}
