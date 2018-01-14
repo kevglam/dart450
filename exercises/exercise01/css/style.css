@@ -1,10 +1,34 @@
 @keyframes imageani {
-  from {color: #6489CC;}
-  to {color: red;}
+  0% {color: #6489CC;}
+  5% {color: white;}
+  10% {color: red;}
+  13% {color: #0000c4;}
+  21% {color: #00c496;}
+  27% {color: red;}
+  30% {color: #c4aa00;}
+  31% {color: #c4aa00;}
+  40% {color: #00c496;}
+  55% {color: purple;}
+  58% {color: red;}
+  65% {color: #0000c4;}
+  78% {color: white;}
+  80% {color: #c4aa00;}
+  88% {color: #0000c4;}
+  90% {color: #00c496;}
+  96% {color: red;}
+  100% {color: white;}
 
 }
 
 body {
+
+
+  /*background-color: #6489CC; */
+
+  background-image: url("http://i63.tinypic.com/j7vw4j.jpg");
+  background-repeat: repeat;
+
+
 
   font: 60px helvetica, sans-serif;
   color: #6489CC;
