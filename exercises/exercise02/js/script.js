@@ -23,15 +23,34 @@ $(document).ready(function () {
     $('#exampleDiv').append('<div id=>' + $('#ambitionInput').val() + '</div>');
   });
 
-  $('#resetButton').on('click',function() {
-    $('#exampleDiv').text(' ');
+  $('#LightFire').on('click',function() {
+    //$('#exampleDiv').text(' ');
+    $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/245zssj.gif" />')
   });
 
-  $('#exampleDiv').hover(function () {
-    $(this).animate({
-      fontSize: '+=1em',
-    },1000);
+  $('#LightsOut').on('click',function() {
+    //$('#exampleDiv').text(' ');
+    $('#exampleDiv').text(' ')
+    $('exampleDiv').css("background-color", "black")
+  });
+
+
+/*
+  $('#fire').hover(function () {
+    $('#fire').animate({ left: '100px', opacity: });
 });
+
+
+/*
+ $('#exampleDiv').hover(function () {
+
+   $('#fire').css({
+     transform: 'scale(5)'
+   }, 1000);
+
+
+ })
+ */
   // Insert jQuery code here to run when the page is loaded
 
 });
