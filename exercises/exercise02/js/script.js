@@ -8,9 +8,10 @@ Description of what the script does...
 
 **********************************************/
 
-var ambitions = [];
+
 
 $(document).ready(function () {
+  var fire_count = 0;
 
   $('#titleDiv').on('click',function () {
     $('#titleDiv').css({
@@ -26,12 +27,22 @@ $(document).ready(function () {
   $('#LightFire').on('click',function() {
     //$('#exampleDiv').text(' ');
     $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/245zssj.gif" />')
+    fire_count++;
+    console.log(fire_count)
+    if(fire_count == 25) {
+      $('#exampleDiv').text(' ')
+      $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/op4p6b.gif" />')
+      fire_count = 0;
+    }
   });
+
+
 
   $('#LightsOut').on('click',function() {
     //$('#exampleDiv').text(' ');
     $('#exampleDiv').text(' ')
     $('exampleDiv').css("background-color", "black")
+    fire_count = 0;
   });
 
 

@@ -38,6 +38,12 @@ body {
   color: white;
 }
 
+#descDiv {
+  font-size: 1em;
+  color: #FF4400;
+  font-weight: bold;
+}
+
 
 .headerClass {
   font-size: 2em;
