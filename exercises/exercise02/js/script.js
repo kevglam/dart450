@@ -29,14 +29,15 @@ $(document).ready(function () {
     $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/245zssj.gif" />')
     fire_count++;
     console.log(fire_count)
+
     if(fire_count == 25) {
       $('#exampleDiv').text(' ')
       $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/2nvcs8y.gif" />')
       fire_count = 0;
     }
   });
-//http://i65.tinypic.com/2nvcs8y.gif 700x700
-
+  //http://i65.tinypic.com/2nvcs8y.gif 700x700
+  //http://i65.tinypic.com/op4p6b.gif  1100x1100
 
   $('#LightsOut').on('click',function() {
     //$('#exampleDiv').text(' ');
@@ -46,22 +47,22 @@ $(document).ready(function () {
   });
 
 
-/*
+  /*
   $('#fire').hover(function () {
-    $('#fire').animate({ left: '100px', opacity: });
+  $('#fire').animate({ left: '100px', opacity: });
 });
 
 
 /*
- $('#exampleDiv').hover(function () {
+$('#exampleDiv').hover(function () {
 
-   $('#fire').css({
-     transform: 'scale(5)'
-   }, 1000);
+$('#fire').css({
+transform: 'scale(5)'
+}, 1000);
 
 
- })
- */
-  // Insert jQuery code here to run when the page is loaded
+})
+*/
+// Insert jQuery code here to run when the page is loaded
 
 });
