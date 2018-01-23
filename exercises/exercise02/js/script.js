@@ -31,11 +31,11 @@ $(document).ready(function () {
     console.log(fire_count)
     if(fire_count == 25) {
       $('#exampleDiv').text(' ')
-      $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/20tff45.gif" />')
+      $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/2nvcs8y.gif" />')
       fire_count = 0;
     }
   });
-
+//http://i65.tinypic.com/2nvcs8y.gif 700x700
 
 
   $('#LightsOut').on('click',function() {
