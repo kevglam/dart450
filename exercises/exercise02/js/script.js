@@ -31,7 +31,7 @@ $(document).ready(function () {
     console.log(fire_count)
     if(fire_count == 25) {
       $('#exampleDiv').text(' ')
-      $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/2nvcs8y.gif" />')
+      $('#exampleDiv').prepend('<img id="fire"  src="http://i65.tinypic.com/20tff45.gif" />')
       fire_count = 0;
     }
   });
