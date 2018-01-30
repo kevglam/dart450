@@ -42,11 +42,11 @@ $(document).ready(function () {
     //What happens if you deactivate the Bomb.
     else if (rightAnswer == true) {
 
-      $('body').css("background-color", "green");
-      $('h1').css("background-color", "green");
-      $('body').css("color", "green");
-      $('#lightText').css("color", "green");
-      $('h1').css("color", "green");
+      $('body').css("background-color", "#65FC4A");
+      $('h1').css("background-color", "#65FC4A");
+      $('body').css("color", "#65FC4A");
+      $('#lightText').css("color", "#65FC4A");
+      $('h1').css("color", "#65FC4A");
       $('#escape').css("color", "black");
       clearInterval(counter);
 
