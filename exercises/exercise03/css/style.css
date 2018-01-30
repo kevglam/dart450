@@ -1,0 +1,54 @@
+/*
+
+DART 450, Winter 2018
+Title of project
+Author
+
+Some description of the CSS styling
+
+*/
+
+h1 {
+  margin: -20px;
+  font-family: Helvetica, sans-serif;
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+
+}
+
+body {
+  margin: 20px;
+  font-family: Helvetica, sans-serif;
+  background-color: black;
+
+}
+
+#switch {
+  text-align: right;
+}
+
+#lightText {
+  color: black;
+}
+
+#counter {
+  font-size: 6em;
+  color: black;
+  font-weight: bold;
+  margin: -20px;
+
+}
+
+#note {
+  margin: 20px;
+}
+
+#answers {
+  margin: 20px;
+}
+
+#escape {
+  font-size: 7em;
+  color: black;
+}
