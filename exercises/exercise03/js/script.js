@@ -10,57 +10,57 @@ Description of what the script does...
 
 $(document).ready(function () {
 
-  var counter = 10;
+  var counter = 60;
   var updateInterval = 1000;
   var rightAnswer = false;
 
+  //What happens if the Bomb is still counting down.
+  var timer = setInterval(function () { 
+    counter = counter - 1;
+    $('#counter').text(counter);
 
+    //What happens when Time Runs Out.
+    if (counter == 0 && rightAnswer == false) {
 
-//What happens if the Bomb is still counting down.
+      $('body').css("background-color", "red");
+      $('h1').css("background-color", "red");
+      $('body').css("color", "red");
+      $('#lightText').css("color", "red");
+      $('h1').css("color", "red");
+      $('#escape').css("color", "red");
+      //$('body').prepend('<img id="fire"  src="http://i65.tinypic.com/20tff45.gif" />')
+      //clearInterval(counter);
+      $('#answerA').hide();
+      $('#answerB').hide();
+      $('#answerC').hide();
+      $('#answerD').hide();
+      $('#turnOn').hide();
+      $('#turnOff').hide();
+      clearInterval(timer);
+    }
 
-    setInterval(function () { 
-      counter = counter - 1;
-      $('#counter').text(counter);
+    //What happens if you deactivate the Bomb.
+    else if (rightAnswer == true) {
 
-      //What happens when Time Runs Out.
-        if (counter == 0 && rightAnswer == false) {
+      $('body').css("background-color", "green");
+      $('h1').css("background-color", "green");
+      $('body').css("color", "green");
+      $('#lightText').css("color", "green");
+      $('h1').css("color", "green");
+      $('#escape').css("color", "black");
+      clearInterval(counter);
 
-          $('body').css("background-color", "red");
-          $('h1').css("background-color", "red");
-          $('body').css("color", "red");
-          $('#lightText').css("color", "red");
-          $('h1').css("color", "red");
-          $('#escape').css("color", "red");
-          //$('body').prepend('<img id="fire"  src="http://i65.tinypic.com/20tff45.gif" />')
-          //clearInterval(counter);
-          $('#answerA').hide();
-          $('#answerB').hide();
-          $('#answerC').hide();
-          $('#answerD').hide();
-          $('#turnOn').hide();
-          $('#turnOff').hide();
-        }
+      $('#answerA').hide();
+      $('#answerB').hide();
+      $('#answerC').hide();
+      $('#answerD').hide();
+      $('#turnOn').hide();
+      $('#turnOff').hide();
 
-      //What happens if you deactivate the Bomb.
-        else if (rightAnswer == true) {
+      clearInterval(timer);
 
-          $('body').css("background-color", "green");
-          $('h1').css("background-color", "green");
-          $('body').css("color", "green");
-          $('#lightText').css("color", "green");
-          $('h1').css("color", "green");
-          $('#escape').css("color", "black");
-          clearInterval(counter);
-
-          $('#answerA').hide();
-          $('#answerB').hide();
-          $('#answerC').hide();
-          $('#answerD').hide();
-          $('#turnOn').hide();
-          $('#turnOff').hide();
-
-        }
-    },updateInterval);
+    }
+  },updateInterval);
 
 
   //Hides answer buttons
@@ -69,7 +69,7 @@ $(document).ready(function () {
   $('#answerC').hide();
   $('#answerD').hide();
 
-//What happens when we turn ON the lights.
+  //What happens when we turn ON the lights.
   $('#turnOn').on('click',function() {
     $('body').css("background-color", "white");
     $('h1').css("background-color", "white");
@@ -83,10 +83,11 @@ $(document).ready(function () {
 
   });
 
-//What happens when we turn OFF the lights.
+  //What happens when we turn OFF the lights.
   $('#turnOff').on('click',function() {
     $('body').css("background-color", "black")
     $('h1').css("background-color", "black")
+    $('#escape').css("color", "black");
 
     //Hides answer buttons
     $('#answerA').hide();
@@ -95,7 +96,7 @@ $(document).ready(function () {
     $('#answerD').hide();
 
   });
-//What happens when we pick the RIGHT answer.
+  //What happens when we pick the RIGHT answer.
   $('#answerB').on('click',function() {
     // counter = 3;
     rightAnswer = true;
