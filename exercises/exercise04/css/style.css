@@ -9,5 +9,19 @@ Some description of the CSS styling
 */
 
 body {
-  
+
+}
+
+h1 {
+  font-family: Comic Sans MS,  sans-serif;
+  color: red;
+}
+
+
+.headerClass {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: Comic Sans MS,  sans-serif;
+  background-color: white;
+  margin-bottom: 20px;
 }
