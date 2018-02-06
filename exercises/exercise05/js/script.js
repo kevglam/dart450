@@ -23,6 +23,7 @@ $(document).ready(function () {
 
   $('#turnOn').on('click',function() {
     $('body').css("background-color", "white");
+    $('body').css("font-family", "Times New Roman")
     $('#One').hide();
     $('#Three').hide();
     $('#Five').hide();
@@ -50,6 +51,7 @@ $(document).ready(function () {
   //What happens when we turn OFF the lights.
   $('#turnOff').on('click',function() {
     $('body').css("background-color", "black")
+    $('body').css("font-family", "Comic Sans MS")
 
     $('#Two').hide();
     $('#Four').hide();
