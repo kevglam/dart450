@@ -24,6 +24,10 @@ $(document).ready(function () {
   $('#turnOn').on('click',function() {
     $('body').css("background-color", "white");
     $('body').css("font-family", "Times New Roman")
+    $('#rules').css("font-family", "Times New Roman")
+    $('#rules').css("color", "black")
+    $('h1').css("color", "black")
+
     $('#One').hide();
     $('#Three').hide();
     $('#Five').hide();
@@ -52,6 +56,9 @@ $(document).ready(function () {
   $('#turnOff').on('click',function() {
     $('body').css("background-color", "black")
     $('body').css("font-family", "Comic Sans MS")
+    $('#rules').css("color", "white")
+    $('#rules').css("font-family", "Comic Sans MS")
+    $('h1').css("color", "white")
 
     $('#Two').hide();
     $('#Four').hide();
