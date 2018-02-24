@@ -1,0 +1,29 @@
+/*
+
+DART 450, Winter 2018
+Title of project
+Author
+
+Some description of the CSS styling
+
+*/
+
+#stats {
+  font-family: sans-serif, Helvetica;
+  font-size: 1.5em;
+}
+
+#username {
+  font-family: sans-serif, Helvetica;
+  font-size: 2em;
+}
+
+#posts {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+#Wariobio {
+  font-family: sans-serif, Helvetica;
+  font-size: 1em;
+}
