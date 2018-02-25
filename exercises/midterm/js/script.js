@@ -4,26 +4,35 @@ DART 450, Winter 2018
 Exercise03
 Kevin Lam
 
-Description of what the script does...
+The main mechanic behind the game is... To gain more followers, you must become more fit by "Pumping Iron".
+The more you work out, the more followers you get. If you post pictures, then the rate at which your
+"popularity" rises will also increase. 
 
 **********************************************/
 
 $(document).ready(function () {
-
+  //Initializing all variables
+  //To count the number of workout repititions to regulate score
   var ironCount = 0;
+  //To keep track of how many pictures Wario posted
   var posts = 0;
+  //To keep track of how many followers Wario has/gains
   var followers = 0;
+  //He only follows 1 other person. That is Waluigi
   var following = 1;
+  //A variable that help keeps the score incrementing in a "random" looking manner
   var lucky = 1;
+  //Variable to cycle through various pictures of Wario
   var imagePicker = 0;
 
-
+  // Top header
   $('h1').prepend('<img id="header"  src="http://i65.tinypic.com/301n67c.jpg" />')
+  //Print initial account stats
   $('#stats').text(posts + "     " + "posts" + "     "  +  followers + "     "  + "followers" + "     "  + following + "     "  + "following" );
-
+  //Wario base animation picture
   $('#warioBase').prepend('<img id="wario1"  src="http://i65.tinypic.com/29d4i8.png" />')
 
-
+  //What happens when you "Pump Iron"
   $('#Workout').on('mousedown',function() {
     $('#warioBase').prepend('<img id="wario2"  src="http://i65.tinypic.com/501et5.png" />')
     $('#wario1').hide();
@@ -33,7 +42,7 @@ $(document).ready(function () {
   $('#Workout').on('mouseup',function() {
     $('#warioBase').prepend('<img id="wario1"  src="http://i65.tinypic.com/29d4i8.png" />')
     $('#wario2').hide();
-
+    //Incrementing followers count
     ironCount++;
     console.log(ironCount);
 
@@ -48,7 +57,7 @@ $(document).ready(function () {
 
 
   });
-
+  //Cycle of pictures for Wario's posts
   $('#Selfie').on('click',function() {
 
     if(imagePicker == 0){
@@ -110,8 +119,9 @@ $(document).ready(function () {
       $('#posts').prepend('<img id="warioPic"  src="http://i64.tinypic.com/2zdraxk.jpg" />')
       imagePicker = 0;
     }
-
+    //To keep track of how many posts
     posts++;
+    //Update stats
     $('#stats').text(posts + "     " + "posts" + "     "  +  followers + "     "  + "followers" + "     "  + following + "     "  + "following" );
 
   });
