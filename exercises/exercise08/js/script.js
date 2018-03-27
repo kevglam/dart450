@@ -9,10 +9,10 @@ Pippin Barr
 
 $(document).ready(function() {
 
-
+//Buttons to go into rooms
   $('#room1').on('click',function() {
 
-
+//Open in a new window/tab
       window.open("page2.html");
       responsiveVoice.speak("Welcome to room 1", "UK English Female", {rate: 1}, {volume: 1});
 
