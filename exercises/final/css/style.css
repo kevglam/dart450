@@ -9,3 +9,11 @@ Some basic styling
 
 /* We have this here just to point out that EVERYTHING
 we run through .blast() ends up with this class. */
+
+#counter {
+  font-size: 3em;
+  color: black;
+  font-weight: bold;
+  margin: -20px;
+
+}

@@ -42,4 +42,14 @@ $(document).ready(function() {
 
   });
 
+  $('#myBox').on('click',function(e) {
+      e.preventDefault();
+      console.log("We're in the box!");
+      window.open("four.html");
+      responsiveVoice.speak("Welcome to room 4", "Australian Female", {rate: 1}, {volume: 1});
+
+  });
+
+
+
   });
