@@ -1,88 +1,121 @@
-  <!-- ************************************************************************
+<!-- ************************************************************************
 
-  Blast.js Template
-  Pippin Barr
+Blast.js Template
+Pippin Barr
 
-  Template that includes blast.js
+Template that includes blast.js
 
-  ************************************************************************ -->
+************************************************************************ -->
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 
-  <html lang="en">
+<html lang="en">
 
-  <head>
+<head>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <title>EvadeNDeactivate</title>
+  <title>EvadeNDeactivate</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- Including jQuery by default -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Including jQuery by default -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Uncomment next two lines to include jQuery UI -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <!-- Uncomment next two lines to include jQuery UI -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    <!-- Blast.js -->
-    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <!-- Blast.js -->
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 
-    <!-- We include our own script file(s) -->
-    <script src="js/script.js" content="text/javascript"></script>
+  <!-- We include our own script file(s) -->
+  <script src="js/script.js" content="text/javascript"></script>
 
-  </head>
+</head>
 
-  <!-- Comment about the body of the HTML -->
-  <center>
+<!-- Comment about the body of the HTML -->
+<center>
   <h1> <div id="counter">  </div> </h1>
-  </center>
+</center>
 
-  <body>
-   <center>
+<body>
+  <center>
     <div id="map">
       <img src="http://i65.tinypic.com/24cion7.png" width="500" height="500" alt="floorPlan" usemap="#areaOnPage"/>
 
-  <map name="areaOnPage">
-    <area id="room1" shape="rect" coords="0,0,166,166" href="">
-    <area id="room2" shape="rect" coords="170,0,375,168" href="">
-    <area id="room3" shape="rect" coords="380,0,500,166" href="">
-    <area id="room4" shape="rect" coords="335,168,500,345" href="">
-    <area id="room5" shape="rect" coords="371,350,500,500" href="">
-    <area id="room6" shape="rect" coords="190,350,371,500" href="">
-    <area id="room7" shape="rect" coords="0,350,190,500" href="">
-    <area id="room8" shape="rect" coords="0,168,168,345" href="">
+      <map name="areaOnPage">
+        <area id="room1" shape="rect" coords="0,0,166,166" href=""/>
+        <area id="room2" shape="rect" coords="170,0,375,168" href=""/>
+        <area id="room3" shape="rect" coords="380,0,500,166" href=""/>
+        <area id="room4" shape="rect" coords="335,168,500,345" href=""/>
+        <area id="room5" shape="rect" coords="371,350,500,500" href=""/>
+        <area id="room6" shape="rect" coords="190,350,371,500" href=""/>
+        <area id="room7" shape="rect" coords="0,350,190,500" href=""/>
+        <area id="room8" shape="rect" coords="0,168,168,345" href=""/>
 
-  </map> </div>
+      </map> </div>
 
-  <div id= "roomOne">
+      <div id= "roomOne">
+        <p> </p>
 
-<button id="Poem1">1</button>
-<button id="Poem2">2</button>
-<button id="Poem3">3</button>
-<button id="Poem4">4</button>
-<button id="Poem5">5</button>
-<button id="Poem6">6</button>
-<button id="Poem7">7</button>
-<button id="Poem8">8</button>
-<button id="back">Back to Map</button>
+        Room 1
 
-  </div>
+        <p> </p>
 
-  <div id="roomTwo"> </div>
+        <button id="Poem1">1</button>
+        <button id="Poem2">2</button>
+        <button id="Poem3">3</button>
+        <button id="Poem4">4</button>
+        <button id="Poem5">5</button>
+        <button id="Poem6">6</button>
+        <button id="Poem7">7</button>
+        <button id="Poem8">8</button>
+        <button id="back">Back to Map</button>
 
-  <div id="roomThree"> </div>
-  <div id= "roomFour"> </div>
-  <div id= "roomFive"> </div>
-  <div id= "roomSix"> </div>
-  <div id= "roomSeven"> </div>
-  <div id= "roomEight"> </div>
+      </div>
+
+      <div id="roomTwo"> </div>
+
+      <div id="roomThree">
+
+        <p> </p>
+
+        Room 3
+
+        <p> </p>
+
+      <button id="Story3">Listen to Story</button></div>
+
+      <div id= "roomFour"> </div>
+      <div id= "roomFive">
+
+        <p> </p>
+        Room 5
+        <p> </p>
+
+      <button id="Story5">Listen to Story</button> </div>
+
+      <div id= "roomSix">
+
+        <p> </p>
+        Room 6
+        <p> </p>
+
+      <button id="Story6">Listen to Story</button></div>
+
+      <div id= "roomSeven"> </div>
+      <div id= "roomEight">
+        <p> </p>
+        Room 8
+        <p> </p>
+
+      <button id="Story8">Listen to Story</button> </div>
 
 
 
-    <!-- Some content -->
-  </center>
+      <!-- Some content -->
+    </center>
   </body>
 
   </html>
