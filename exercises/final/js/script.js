@@ -10,17 +10,111 @@ Pippin Barr
 $(document).ready(function() {
   var counter = 300;
   var updateInterval = 1000;
+  var poemSequence = 1;
+  var puzzleOne = 0;
 
-  //$('#roomOne').hide();
-  //$('#roomTwo').hide();
-  //$('#roomThree').hide();
-  //$('#roomFour').hide();
-  //$('#roomFive').hide();
-  //$('#roomSix').hide();
-  //$('#roomSeven').hide();
-  //$('#roomEight').hide();
+  $('#roomOne').hide();
+  $('#roomTwo').hide();
+  $('#roomThree').hide();
+  $('#roomFour').hide();
+  $('#roomFive').hide();
+  $('#roomSix').hide();
+  $('#roomSeven').hide();
+  $('#roomEight').hide();
 
-  $('#Back').on('click',function() {
+  $('#back').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+  $('#back2').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+
+  $('#back3').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+  $('#back4').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+  $('#back5').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+  $('#back6').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+  $('#back7').on('click',function() {
+
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').show();
+
+  });
+  $('#back8').on('click',function() {
 
     $('#roomOne').hide();
     $('#roomTwo').hide();
@@ -38,49 +132,70 @@ $(document).ready(function() {
 
     responsiveVoice.speak("flower. you", "UK English Male", {rate: 1}, {volume: 1});
 
+    (poemSequence * 10 + 1);
+
   });
 
   $('#Poem2').on('click',function() {
 
     responsiveVoice.speak("my very eyes", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 2);
 
   });
 
   $('#Poem3').on('click',function() {
 
     responsiveVoice.speak("Like a true", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 3);
 
   });
 
   $('#Poem4').on('click',function() {
 
     responsiveVoice.speak("Goodbye.", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 4);
 
   });
 
   $('#Poem5').on('click',function() {
 
     responsiveVoice.speak("friend, the hardest", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 5);
 
   });
 
   $('#Poem6').on('click',function() {
 
     responsiveVoice.speak("Like a delicate", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 6);
 
   });
 
   $('#Poem7').on('click',function() {
 
     responsiveVoice.speak("part is saying", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 7);
 
   });
 
   $('#Poem8').on('click',function() {
 
     responsiveVoice.speak("blossomed right before", "UK English Male", {rate: 1}, {volume: 1});
+    (poemSequence * 10 + 8);
 
   });
+
+  $('#Clear').on('click',function() {
+
+    poemSequence = 1;
+
+  });
+
+  if(poemSequence == 161823574){
+
+    puzzleOne = 1;
+
+  }
 
   $('#Story3').on('click',function() {
 
@@ -113,14 +228,79 @@ $(document).ready(function() {
 
 
   },updateInterval);
-});
 
-$('#room1').on('click',function(e) {
-      e.preventDefault();
-      console.log("Entered: Room 1");
-      $('#roomOne').show();
-      $('#map').hide();
-      responsiveVoice.speak("Welcome to room 1", "Australian Female", {rate: 1}, {volume: 1});
+  $('#room1').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 1");
+    $('#roomOne').show();
+    $('#map').hide();
+    //responsiveVoice.speak("Welcome to room 1", "Australian Female", {rate: 1}, {volume: 1});
+
+  });
+
+  $('#room2').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 2");
+    $('#roomTwo').show();
+    $('#map').hide();
+    //responsiveVoice.speak("Welcome to room 1", "Australian Female", {rate: 1}, {volume: 1});
+
+  });
+
+  $('#room3').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 3");
+    $('#roomThree').show();
+    $('#map').hide();
 
 
   });
+
+  $('#room4').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 4");
+    $('#roomFour').show();
+    $('#map').hide();
+    //responsiveVoice.speak("Welcome to room 1", "Australian Female", {rate: 1}, {volume: 1});
+
+  });
+
+  $('#room5').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 5");
+    $('#roomFive').show();
+    $('#map').hide();
+
+
+  });
+
+  $('#room6').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 6");
+    $('#roomSix').show();
+    $('#map').hide();
+
+
+  });
+
+  $('#room7').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 7");
+    $('#roomSeven').show();
+    $('#map').hide();
+    //responsiveVoice.speak("Welcome to room 1", "Australian Female", {rate: 1}, {volume: 1});
+
+  });
+
+
+  $('#room8').on('click',function(e) {
+    e.preventDefault();
+    console.log("Entered: Room 8");
+    $('#roomEight').show();
+    $('#map').hide();
+
+
+  });
+
+
+});
