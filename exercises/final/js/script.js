@@ -8,7 +8,7 @@ Pippin Barr
 
 
 $(document).ready(function() {
-  var counter = 10;
+  var counter = 480;
   var updateInterval = 1000;
   var poemSequence = 1;
   var puzzleOne = 0;
@@ -28,63 +28,63 @@ $(document).ready(function() {
     //$('body').css("background-color", "black")
 
     $('#turnOn').on('click',function() {
-    $('body').css("background-color", "white");
-    $('#roomOne').hide();
-    $('#roomTwo').hide();
-    $('#roomThree').hide();
-    $('#roomFour').hide();
-    $('#roomFive').hide();
-    $('#roomSix').hide();
-    $('#roomSeven').hide();
-    $('#roomEight').hide();
-    $('#map').hide();
-    $('#Lose').hide();
-    $('#Win').hide();
-    $('#map').show();
-    $('#AHH').show();
-    $('#Welcome').hide();
-    //$('#switch').hide();
+      $('body').css("background-color", "white");
+      $('#roomOne').hide();
+      $('#roomTwo').hide();
+      $('#roomThree').hide();
+      $('#roomFour').hide();
+      $('#roomFive').hide();
+      $('#roomSix').hide();
+      $('#roomSeven').hide();
+      $('#roomEight').hide();
+      $('#map').hide();
+      $('#Lose').hide();
+      $('#Win').hide();
+      $('#map').show();
+      $('#AHH').show();
+      $('#Welcome').hide();
+      //$('#switch').hide();
 
 
-  });
+    });
 
-  //What happens when we turn OFF the lights.
-  $('#turnOff').on('click',function() {
-    $('body').css("background-color", "black")
-    $('#roomOne').hide();
-    $('#roomTwo').hide();
-    $('#roomThree').hide();
-    $('#roomFour').hide();
-    $('#roomFive').hide();
-    $('#roomSix').hide();
-    $('#roomSeven').hide();
-    $('#roomEight').hide();
-    $('#map').hide();
-    $('#Lose').hide();
-    $('#Win').hide();
-    $('#switch').show();
-    $('#AHH').hide();
-
-
-  });
-
-  $('#hideHUD').on('click',function() {
-
-    $('#AHH').hide();
-    $('#note').hide();
+    //What happens when we turn OFF the lights.
+    $('#turnOff').on('click',function() {
+      $('body').css("background-color", "black")
+      $('#roomOne').hide();
+      $('#roomTwo').hide();
+      $('#roomThree').hide();
+      $('#roomFour').hide();
+      $('#roomFive').hide();
+      $('#roomSix').hide();
+      $('#roomSeven').hide();
+      $('#roomEight').hide();
+      $('#map').hide();
+      $('#Lose').hide();
+      $('#Win').hide();
+      $('#switch').show();
+      $('#AHH').hide();
 
 
-  });
+    });
 
-  $('#showHUD').on('click',function() {
+    $('#hideHUD').on('click',function() {
 
-    $('#AHH').show();
-    $('#note').show();
+      $('#AHH').hide();
+      $('#note').hide();
 
 
-  });
+    });
 
-  if (counter == 0 && worldPass <= 4) {
+    $('#showHUD').on('click',function() {
+
+      $('#AHH').show();
+      $('#note').show();
+
+
+    });
+
+    if (counter == 0 && worldPass <= 4) {
 
       $('body').css("background-color", "red");
       $('#roomOne').hide();
@@ -140,11 +140,27 @@ $(document).ready(function() {
     passTwo = $('#passcode').val();
     console.log(passTwo);
 
-    if(passTwo == "Beautiful" || "beautiful" || "BEAUTIFUL"){
+    if(passTwo == "Beautiful"){
 
       puzzleTwo = 1;
       console.log("CODE2ACCEPTED!");
       worldPass = worldPass + puzzleTwo;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+    }
+
+    if(passTwo == "beautiful"){
+
+      puzzleTwo = 1;
+      console.log("CODE2ACCEPTED!");
+      worldPass = worldPass + puzzleTwo;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+    }
+    if(passTwo == "BEAUTIFUL"){
+
+      puzzleTwo = 1;
+      console.log("CODE2ACCEPTED!");
+      worldPass = worldPass + puzzleTwo;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
     }
   });
 
@@ -158,6 +174,7 @@ $(document).ready(function() {
       puzzleFour = 1;
       console.log("CODE4ACCEPTED!");
       worldPass = worldPass + puzzleFour;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
     }
   });
 
@@ -166,11 +183,28 @@ $(document).ready(function() {
     passSeven = $('#Esther').val();
     console.log(passSeven);
 
-    if(passSeven == "Esther" || "esther" || "ESTHER"){
+    if(passSeven == "Esther"){
 
       puzzleSeven = 1;
       console.log("CODE7ACCEPTED!");
       worldPass = worldPass + puzzleSeven;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+    }
+
+    if(passSeven == "esther"){
+
+      puzzleSeven = 1;
+      console.log("CODE7ACCEPTED!");
+      worldPass = worldPass + puzzleSeven;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+    }
+
+    if(passSeven == "ESTHER"){
+
+      puzzleSeven = 1;
+      console.log("CODE7ACCEPTED!");
+      worldPass = worldPass + puzzleSeven;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
     }
   });
 
@@ -365,6 +399,7 @@ $(document).ready(function() {
       puzzleOne = 1;
       console.log("CODE1ACCEPTED!");
       worldPass = worldPass + puzzleOne;
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
 
     }
 
@@ -377,13 +412,13 @@ $(document).ready(function() {
 
   });
 
-$('#diary').on('click',function() {
+  $('#diary').on('click',function() {
 
-$("#diary").blast({
-    search: "beautiful"
-});
+    $("#diary").blast({
+      search: "beautiful"
+    });
 
-});
+  });
 
 
   $('#Story3').on('click',function() {
@@ -411,12 +446,12 @@ $("#diary").blast({
   });
 
 
-//  var timer = setInterval(function () { 
+  //  var timer = setInterval(function () { 
   //  counter = counter - 1;
-    //$('#counter').text(counter);
+  //$('#counter').text(counter);
 
 
-//  },updateInterval);
+  //  },updateInterval);
 
   $('#room1').on('click',function(e) {
     e.preventDefault();
