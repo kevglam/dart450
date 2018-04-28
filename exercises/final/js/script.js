@@ -12,6 +12,7 @@ $(document).ready(function() {
   var updateInterval = 1000;
   var poemSequence = 1;
   var puzzleOne = 0;
+  var passTwo = $('#passcode').val();
 
   $('#roomOne').hide();
   $('#roomTwo').hide();
@@ -132,58 +133,78 @@ $(document).ready(function() {
 
     responsiveVoice.speak("flower. you", "UK English Male", {rate: 1}, {volume: 1});
 
-    (poemSequence * 10 + 1);
+    (poemSequence = (poemSequence * 10) + 1);
+    console.log(poemSequence);
 
   });
 
   $('#Poem2').on('click',function() {
 
     responsiveVoice.speak("my very eyes", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 2);
+    (poemSequence = (poemSequence * 10) + 2);
+      console.log(poemSequence);
 
   });
 
   $('#Poem3').on('click',function() {
 
     responsiveVoice.speak("Like a true", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 3);
+    (poemSequence = (poemSequence * 10) + 3);
+      console.log(poemSequence);
 
   });
 
   $('#Poem4').on('click',function() {
 
     responsiveVoice.speak("Goodbye.", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 4);
+    (poemSequence = (poemSequence * 10) + 4);
+      console.log(poemSequence);
 
   });
 
   $('#Poem5').on('click',function() {
 
     responsiveVoice.speak("friend, the hardest", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 5);
+    (poemSequence = (poemSequence * 10) + 5);
+      console.log(poemSequence);
 
   });
 
   $('#Poem6').on('click',function() {
 
     responsiveVoice.speak("Like a delicate", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 6);
+    (poemSequence = (poemSequence * 10) + 6);
+      console.log(poemSequence);
 
   });
 
   $('#Poem7').on('click',function() {
 
     responsiveVoice.speak("part is saying", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 7);
+    (poemSequence = (poemSequence * 10) + 7);
+      console.log(poemSequence);
 
   });
 
   $('#Poem8').on('click',function() {
 
     responsiveVoice.speak("blossomed right before", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence * 10 + 8);
+    (poemSequence = (poemSequence * 10) + 8);
+      console.log(poemSequence);
 
   });
+
+  $('#confirm').on('click',function() {
+
+    if(poemSequence == 161823574){
+
+      puzzleOne = 1;
+      console.log("CODE1ACCEPTED!");
+
+    }
+
+  });
+
 
   $('#Clear').on('click',function() {
 
@@ -191,11 +212,9 @@ $(document).ready(function() {
 
   });
 
-  if(poemSequence == 161823574){
 
-    puzzleOne = 1;
 
-  }
+
 
   $('#Story3').on('click',function() {
 
