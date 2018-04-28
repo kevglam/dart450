@@ -13,7 +13,9 @@ $(document).ready(function() {
   var poemSequence = 1;
   var puzzleOne = 0;
   var puzzleTwo = 0;
+  var puzzleFour = 0;
   var passTwo = $('#passcode').val();
+  var passFour = $('#books').val();
 
   //console.log(passTwo);
 
@@ -26,6 +28,18 @@ $(document).ready(function() {
 
       puzzleTwo = 1;
       console.log("CODE2ACCEPTED!");
+    }
+  });
+
+  $('#input4').on('click',function() {
+
+    passFour = $('#books').val();
+    console.log(passFour);
+
+    if(passFour == "4"){
+
+      puzzleFour = 1;
+      console.log("CODE4ACCEPTED!");
     }
   });
 
