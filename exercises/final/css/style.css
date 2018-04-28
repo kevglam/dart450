@@ -10,11 +10,42 @@ Some basic styling
 /* We have this here just to point out that EVERYTHING
 we run through .blast() ends up with this class. */
 
+body {
+  background-color: black;
+
+}
+
+#Welcome{
+color: white;
+font-size: 2em;
+
+}
+
+#AHH {
+  font-size: 2em;
+}
+
 #counter {
   font-size: 3em;
   color: black;
   font-weight: bold;
   margin: -20px;
+
+}
+
+#Lose {
+
+  font-size: 3em;
+  color: black;
+  font-weight: bold;
+
+}
+
+#Win {
+
+  font-size: 3em;
+  color: black;
+  font-weight: bold;
 
 }
 

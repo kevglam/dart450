@@ -8,16 +8,132 @@ Pippin Barr
 
 
 $(document).ready(function() {
-  var counter = 300;
+  var counter = 10;
   var updateInterval = 1000;
   var poemSequence = 1;
   var puzzleOne = 0;
   var puzzleTwo = 0;
   var puzzleFour = 0;
+  var puzzleSeven = 0;
   var passTwo = $('#passcode').val();
   var passFour = $('#books').val();
+  var passSeven = $('#Esther').val();
+  var worldPass = 0;
 
   //console.log(passTwo);
+  var timer = setInterval(function () { 
+    counter = counter - 1;
+    $('#counter').text(counter);
+
+    //$('body').css("background-color", "black")
+
+    $('#turnOn').on('click',function() {
+    $('body').css("background-color", "white");
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').hide();
+    $('#Lose').hide();
+    $('#Win').hide();
+    $('#map').show();
+    $('#AHH').show();
+    $('#Welcome').hide();
+    //$('#switch').hide();
+
+
+  });
+
+  //What happens when we turn OFF the lights.
+  $('#turnOff').on('click',function() {
+    $('body').css("background-color", "black")
+    $('#roomOne').hide();
+    $('#roomTwo').hide();
+    $('#roomThree').hide();
+    $('#roomFour').hide();
+    $('#roomFive').hide();
+    $('#roomSix').hide();
+    $('#roomSeven').hide();
+    $('#roomEight').hide();
+    $('#map').hide();
+    $('#Lose').hide();
+    $('#Win').hide();
+    $('#switch').show();
+    $('#AHH').hide();
+
+
+  });
+
+  $('#hideHUD').on('click',function() {
+
+    $('#AHH').hide();
+    $('#note').hide();
+
+
+  });
+
+  $('#showHUD').on('click',function() {
+
+    $('#AHH').show();
+    $('#note').show();
+
+
+  });
+
+  if (counter == 0 && worldPass <= 4) {
+
+      $('body').css("background-color", "red");
+      $('#roomOne').hide();
+      $('#roomTwo').hide();
+      $('#roomThree').hide();
+      $('#roomFour').hide();
+      $('#roomFive').hide();
+      $('#roomSix').hide();
+      $('#roomSeven').hide();
+      $('#roomEight').hide();
+      $('#map').hide();
+      $('#Lose').show();
+      $('#Win').hide();
+      $('#AHH').hide();
+      $('#Welcome').hide();
+      $('#switch').hide();
+      $('#note').hide();
+
+      clearInterval(timer);
+    }
+
+    //What happens if you deactivate the Bomb.
+    else if (worldPass >= 4) {
+
+
+      clearInterval(counter);
+      $('body').css("background-color", "white");
+      $('#roomOne').hide();
+      $('#roomTwo').hide();
+      $('#roomThree').hide();
+      $('#roomFour').hide();
+      $('#roomFive').hide();
+      $('#roomSix').hide();
+      $('#roomSeven').hide();
+      $('#roomEight').hide();
+      $('#map').hide();
+      $('#Lose').hide();
+      $('#Win').show();
+      $('#AHH').hide();
+      $('#Welcome').hide();
+      $('#note').hide();
+      $('#switch').hide();
+
+
+
+      clearInterval(timer);
+
+    }
+  },updateInterval);
 
   $('#input').on('click',function() {
 
@@ -28,6 +144,7 @@ $(document).ready(function() {
 
       puzzleTwo = 1;
       console.log("CODE2ACCEPTED!");
+      worldPass = worldPass + puzzleTwo;
     }
   });
 
@@ -40,6 +157,20 @@ $(document).ready(function() {
 
       puzzleFour = 1;
       console.log("CODE4ACCEPTED!");
+      worldPass = worldPass + puzzleFour;
+    }
+  });
+
+  $('#input7').on('click',function() {
+
+    passSeven = $('#Esther').val();
+    console.log(passSeven);
+
+    if(passSeven == "Esther" || "esther" || "ESTHER"){
+
+      puzzleSeven = 1;
+      console.log("CODE7ACCEPTED!");
+      worldPass = worldPass + puzzleSeven;
     }
   });
 
@@ -51,6 +182,10 @@ $(document).ready(function() {
   $('#roomSix').hide();
   $('#roomSeven').hide();
   $('#roomEight').hide();
+  $('#Lose').hide();
+  $('#Win').hide();
+  $('#map').hide();
+  $('#AHH').hide();
 
   $('#back').on('click',function() {
 
@@ -229,6 +364,7 @@ $(document).ready(function() {
 
       puzzleOne = 1;
       console.log("CODE1ACCEPTED!");
+      worldPass = worldPass + puzzleOne;
 
     }
 
@@ -275,12 +411,12 @@ $("#diary").blast({
   });
 
 
-  var timer = setInterval(function () { 
-    counter = counter - 1;
-    $('#counter').text(counter);
+//  var timer = setInterval(function () { 
+  //  counter = counter - 1;
+    //$('#counter').text(counter);
 
 
-  },updateInterval);
+//  },updateInterval);
 
   $('#room1').on('click',function(e) {
     e.preventDefault();

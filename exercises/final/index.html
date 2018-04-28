@@ -42,8 +42,39 @@ Template that includes blast.js
 
 <body>
   <center>
+    <div id="Welcome"> You wake up in a dark room. There is a light switch in front of you. </div>
+    <div id="AHH"> You discover a time bomb in the room with you. <br> You notice the bomb counting down and a note under the light switch. </div>
+    <div id="switch">
+      <button id="turnOn">Turn On Lights</button>
+
+      <button id="turnOff">Turn Off Lights</button>
+
+      <button id="showHUD">Show Notes</button>
+
+      <button id="hideHUD">Hide Notes</button>
+
+      <p> </p>
+
+      <div id= "note"> Note: Welcome to my little game. If you wish to live, make yourself at home. Listen to my stories and solve the puzzles. </div>
+      <p> </p>
+    </div>
+
+
+    <div id="Lose">
+
+      You Died.
+
+    </div>
+
+    <div id="Win">
+
+      You awaken from a restless sleep. Today is the day. The day you finally get revenge for your dear Esther.
+
+    </div>
     <div id="map">
       <img src="http://i65.tinypic.com/24cion7.png" width="500" height="500" alt="floorPlan" usemap="#areaOnPage"/>
+<p> </p>
+      Click on Rooms to Enter.
 
       <map name="areaOnPage">
         <area id="room1" shape="rect" coords="0,0,166,166" href=""/>
@@ -185,6 +216,11 @@ Template that includes blast.js
               <button id="back6">Back to Map</button></div>
 
               <div id= "roomSeven">
+
+                My dear... <input type="text" id="Esther">
+
+                <button id="input7">Enter</button>
+                <p> </p>
                 <button id="back7">Back to Map</button></div>
                 <div id= "roomEight">
                   <p> </p>
