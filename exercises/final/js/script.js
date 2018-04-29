@@ -1,32 +1,32 @@
 /*
 
-Blast.js template
-Pippin Barr
+Final Project
+Kevin Lam
 
 
 */
 
 
 $(document).ready(function() {
-  var counter = 480;
-  var updateInterval = 1000;
-  var poemSequence = 1;
-  var puzzleOne = 0;
-  var puzzleTwo = 0;
-  var puzzleFour = 0;
-  var puzzleSeven = 0;
-  var passTwo = $('#passcode').val();
-  var passFour = $('#books').val();
-  var passSeven = $('#Esther').val();
-  var worldPass = 0;
+  var counter = 480; //Variable for the Countdown
+  var updateInterval = 1000; //Update rate
+  var poemSequence = 1; //Variable that keeps track of the poem order for Room 1
+  var puzzleOne = 0; //Variable that keeps track of the success of Room 1
+  var puzzleTwo = 0; //Variable that keeps track of the success of Room 2
+  var puzzleFour = 0; //Variable that keeps track of the success of Room 4
+  var puzzleSeven = 0; //Variable that keeps track of the success of Room 7
+  var passTwo = $('#passcode').val(); //This variable tracks what the user inputs in a input field. (Room 2)
+  var passFour = $('#books').val(); //This variable tracks what the user inputs in a input field. (Room 4)
+  var passSeven = $('#Esther').val(); //This variable tracks what the user inputs in a input field. (Room 7)
+  var worldPass = 0; //Variable that tracks if the player successfully completes all puzzles.
 
   //console.log(passTwo);
+  //Function in charge of the countdown
   var timer = setInterval(function () { 
     counter = counter - 1;
-    $('#counter').text(counter);
+    $('#counter').text(counter); //Displays countdown
 
-    //$('body').css("background-color", "black")
-
+    //What happens when we turn ON the lights.
     $('#turnOn').on('click',function() {
       $('body').css("background-color", "white");
       $('#roomOne').hide();
@@ -68,6 +68,7 @@ $(document).ready(function() {
 
     });
 
+    //Button to declutter on-screen information
     $('#hideHUD').on('click',function() {
 
       $('#AHH').hide();
@@ -76,6 +77,7 @@ $(document).ready(function() {
 
     });
 
+    //Button to bring back on-screen information
     $('#showHUD').on('click',function() {
 
       $('#AHH').show();
@@ -84,6 +86,7 @@ $(document).ready(function() {
 
     });
 
+    //If the player runs out of time and has not completed all 4 puzzles => GAME OVER Screen is shown.
     if (counter == 0 && worldPass <= 4) {
 
       $('body').css("background-color", "red");
@@ -103,10 +106,10 @@ $(document).ready(function() {
       $('#switch').hide();
       $('#note').hide();
 
-      clearInterval(timer);
+      clearInterval(timer); //Stop timer!
     }
 
-    //What happens if you deactivate the Bomb.
+    //What happens if you deactivate the Bomb. If the player solves all 4 puzzles.
     else if (worldPass >= 4) {
 
 
@@ -130,24 +133,25 @@ $(document).ready(function() {
 
 
 
-      clearInterval(timer);
+      clearInterval(timer); //Stop timer!
 
     }
   },updateInterval);
 
+  //This controls the input field for Room 2
   $('#input').on('click',function() {
 
     passTwo = $('#passcode').val();
     console.log(passTwo);
 
-    if(passTwo == "Beautiful"){
+    if(passTwo == "Beautiful"){ //If the user enters the right world then do this...
 
-      puzzleTwo = 1;
+      puzzleTwo = 1; //Check that the player has completed room 2
       console.log("CODE2ACCEPTED!");
-      worldPass = worldPass + puzzleTwo;
-      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+      worldPass = worldPass + puzzleTwo; //Increment global score to keep track of player's total progress
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1}); //Voice indication of success
     }
-
+    //Other spelling iterations of the right answer...
     if(passTwo == "beautiful"){
 
       puzzleTwo = 1;
@@ -164,32 +168,36 @@ $(document).ready(function() {
     }
   });
 
+  //This controls the input field for Room 4
   $('#input4').on('click',function() {
 
     passFour = $('#books').val();
     console.log(passFour);
 
-    if(passFour == "4"){
+    if(passFour == "4"){ //If the right number is entered...
 
-      puzzleFour = 1;
+      puzzleFour = 1; //Check that the player has completed room 4
       console.log("CODE4ACCEPTED!");
-      worldPass = worldPass + puzzleFour;
-      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+      worldPass = worldPass + puzzleFour; //Increment global score to keep track of player's total progress
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});//Voice indication of success
     }
   });
 
+  //This controls the input field for Room 7
   $('#input7').on('click',function() {
 
     passSeven = $('#Esther').val();
     console.log(passSeven);
 
-    if(passSeven == "Esther"){
+    if(passSeven == "Esther"){ //If the right name is entered...
 
-      puzzleSeven = 1;
+      puzzleSeven = 1; //Check that the player has completed room 7
       console.log("CODE7ACCEPTED!");
-      worldPass = worldPass + puzzleSeven;
-      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+      worldPass = worldPass + puzzleSeven; //Increment global score to keep track of player's total progress
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1}); //Voice indication of success
     }
+
+    //Other spelling iterations of the right answer...
 
     if(passSeven == "esther"){
 
@@ -208,6 +216,7 @@ $(document).ready(function() {
     }
   });
 
+  //Hide and show what is necessary when the page is loaded.
   $('#roomOne').hide();
   $('#roomTwo').hide();
   $('#roomThree').hide();
@@ -221,6 +230,7 @@ $(document).ready(function() {
   $('#map').hide();
   $('#AHH').hide();
 
+  //These are all the functions that control the Back to Map buttons to show relevant info when user wishes to return to Map.
   $('#back').on('click',function() {
 
     $('#roomOne').hide();
@@ -327,91 +337,92 @@ $(document).ready(function() {
 
   });
 
+  //These are all ResponsiveVoice prompts for the sections of poems for Room 1
   $('#Poem1').on('click',function() {
 
-    responsiveVoice.speak("flower. you", "UK English Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("flower. you", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
 
-    (poemSequence = (poemSequence * 10) + 1);
+    (poemSequence = (poemSequence * 10) + 1); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem2').on('click',function() {
 
-    responsiveVoice.speak("my very eyes", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 2);
+    responsiveVoice.speak("my very eyes", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 2); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem3').on('click',function() {
 
-    responsiveVoice.speak("Like a true", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 3);
+    responsiveVoice.speak("Like a true", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 3); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem4').on('click',function() {
 
-    responsiveVoice.speak("Goodbye.", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 4);
+    responsiveVoice.speak("Goodbye.", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 4); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem5').on('click',function() {
 
-    responsiveVoice.speak("friend, the hardest", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 5);
+    responsiveVoice.speak("friend, the hardest", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 5); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem6').on('click',function() {
 
-    responsiveVoice.speak("Like a delicate", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 6);
+    responsiveVoice.speak("Like a delicate", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 6); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem7').on('click',function() {
 
-    responsiveVoice.speak("part is saying", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 7);
+    responsiveVoice.speak("part is saying", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 7); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#Poem8').on('click',function() {
 
-    responsiveVoice.speak("blossomed right before", "UK English Male", {rate: 1}, {volume: 1});
-    (poemSequence = (poemSequence * 10) + 8);
+    responsiveVoice.speak("blossomed right before", "UK English Male", {rate: 1}, {volume: 1}); //Play part of poem
+    (poemSequence = (poemSequence * 10) + 8); //This is to keep track of whether or not the right sequence is clicked.
     console.log(poemSequence);
 
   });
 
   $('#confirm').on('click',function() {
 
-    if(poemSequence == 161823574){
+    if(poemSequence == 161823574){ //If the right sequence is played (RIGHT SEQUENCE IS: 6>1>8>2>3>5>7>4>CONFIRM)
 
-      puzzleOne = 1;
+      puzzleOne = 1; //Check that the player has completed room 1
       console.log("CODE1ACCEPTED!");
-      worldPass = worldPass + puzzleOne;
-      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});
+      worldPass = worldPass + puzzleOne; //Increment global score to keep track of player's total progress
+      responsiveVoice.speak("You Solved a Puzzle!", "UK English Male", {rate: 0.5}, {volume: 1});  //Voice indication of success
 
     }
 
   });
 
-
+  //This clears the variable that keeps track of what the player clicks. Just in case if the player enters the wrong sequence
   $('#Clear').on('click',function() {
 
     poemSequence = 1;
 
   });
-
+  //Blast.js on diary to show the word/answer Beautiful when clicking the text.
   $('#diary').on('click',function() {
 
     $("#diary").blast({
@@ -420,7 +431,7 @@ $(document).ready(function() {
 
   });
 
-
+  //These are responsiveVoice prompts to listen to the story/narration of the killer
   $('#Story3').on('click',function() {
 
     responsiveVoice.speak("Esther was the love of my life. We had great times together and we shared so much. We had the same job. I met her on the first day of the job. She helped me out with the first exercise. I was useless. She was a genius. We were bomb defusers. ", "UK English Male", {rate: 1}, {volume: 1});
@@ -453,11 +464,12 @@ $(document).ready(function() {
 
   //  },updateInterval);
 
-  $('#room1').on('click',function(e) {
-    e.preventDefault();
+  //These control what happens when we enter a room... (Buttons for Rooms 1 to 8)
+  $('#room1').on('click',function(e) { //Ex. Click to enter Room 1
+    e.preventDefault(); //Stop default behaviour that is to refresh the page when clicking
     console.log("Entered: Room 1");
-    $('#roomOne').show();
-    $('#map').hide();
+    $('#roomOne').show(); //Show the appropriate room. In this case it is room 1
+    $('#map').hide(); //Hide map.
     //responsiveVoice.speak("Welcome to room 1", "Australian Female", {rate: 1}, {volume: 1});
 
   });
